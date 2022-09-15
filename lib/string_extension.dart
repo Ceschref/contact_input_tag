@@ -1,14 +1,12 @@
 extension ExtendedString on String {
   bool get checkEmail {
-    final RegExp _regexEmail =
-        RegExp(r"""^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-\/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+\.{0,1}[a-zA-Z]+""");
+    final RegExp _regexEmail = RegExp(r"""^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$""");
     return _regexEmail.hasMatch(this);
   }
 
-  bool get checkPhoneNumber {
-    const String _phoneNumberlPattern = r'(09|03|07|08|05)+([0-9]{8})';
-    final RegExp _regexPhoneNumber = RegExp(_phoneNumberlPattern);
-    return _regexPhoneNumber.hasMatch(this) && length == 10;
+  bool checkPhoneNumber(String phoneNumberPattern) {
+    final RegExp _regexPhoneNumber = RegExp(phoneNumberPattern);
+    return _regexPhoneNumber.hasMatch(this);
   }
 
   String get getLetterFirstName {
