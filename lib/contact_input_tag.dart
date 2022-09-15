@@ -18,8 +18,8 @@ extension TypeTagExts on TypeTag {
   }
 }
 
-class ContactInput extends StatefulWidget {
-  const ContactInput({
+class ContactInputTag extends StatefulWidget {
+  const ContactInputTag({
     Key? key,
     this.hintText,
     required this.label,
@@ -48,7 +48,7 @@ class ContactInput extends StatefulWidget {
   ContactInputTagState createState() => ContactInputTagState();
 }
 
-class ContactInputTagState extends State<ContactInput> {
+class ContactInputTagState extends State<ContactInputTag> {
   late final TextEditingController textEditingController;
   late final FocusNode _focusNode;
   late final List<TextInputFormatter>? listTextInputFormatter;
