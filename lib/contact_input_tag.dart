@@ -22,7 +22,7 @@ class ContactInputTag extends StatefulWidget {
   const ContactInputTag({
     Key? key,
     this.hintText,
-    required this.label,
+    this.label,
     this.focusNode,
     required this.updateResult,
     this.listRecord,
@@ -33,15 +33,25 @@ class ContactInputTag extends StatefulWidget {
     this.phoneNumberPattern = r'(09|03|07|08|05)+([0-9]{8})\b',
   }) : super(key: key);
 
-  final String label;
+  final String? label;
   final String? hintText;
   final TextEditingController? textEditingController;
   final TypeTag typeTag;
   final FocusNode? focusNode;
+
+  /// One parameter to check is display (*). Field marking is required. Default is false
   final bool isRequired;
+
+  /// List record data init
   final List<String>? listRecord;
+
+  /// Function callback when you have actions (unfocus, space, delete)
   final Function(List<dynamic>) updateResult;
+
+  /// To make sure that the data you enter is correct
   final List<TextInputFormatter>? listTextInputFormatter;
+
+  /// Model your phone number to be compatible with your language, the default is the Vietnamese phone number format
   final String phoneNumberPattern;
 
   @override
@@ -259,24 +269,26 @@ class ContactInputTagState extends State<ContactInputTag> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: widget.label,
-                style: const TextStyle(color: Color(0xFF323B4B)),
-              ),
-              if (widget.isRequired)
-                const TextSpan(
-                  text: ' *',
-                  style: TextStyle(color: Color(0xFFE81C35)),
+        if (widget.label != null)
+          RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: widget.label,
+                  style: const TextStyle(color: Color(0xFF323B4B)),
                 ),
-            ],
+                if (widget.isRequired)
+                  const TextSpan(
+                    text: ' *',
+                    style: TextStyle(color: Color(0xFFE81C35)),
+                  ),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
+        if (widget.label != null)
+          const SizedBox(
+            height: 10,
+          ),
         Wrap(
           crossAxisAlignment: WrapCrossAlignment.center,
           runSpacing: 5,
