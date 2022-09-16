@@ -1,15 +1,12 @@
 ## Contact Input Tag
 
-Package helps you to make email or phone number contact tags like Google Gmail!
+Package helps you to make email or phone number contact tags like Google Gmail.
+
+You can custom your model phone number to be compatible with your language, the default is the Vietnamese phone number format.
 
 ## Features
 
 ![ezgif-1-6498164a72](https://user-images.githubusercontent.com/28478203/190557770-ca6003e0-746b-4864-9304-ca2188296154.gif)
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
@@ -41,13 +38,3 @@ Email input tag example
                 listRecord: ['mail1@gmail.com'],
               ),
 ```
-
-## Properties
-
-
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
