@@ -86,7 +86,7 @@ class ContactInputTagState extends State<ContactInputTag> {
             ? null
             : <TextInputFormatter>[
                 FilteringTextInputFormatter.allow(
-                  RegExp(r'[0-9 ]+'),
+                  RegExp(r'[0-9 \u200B]+'),
                 ),
               ]);
     textEditingController.addListener(() {

@@ -29,6 +29,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final GlobalKey<ContactInputTagState> _emailInputTagGlobalKey = GlobalKey<ContactInputTagState>();
+  final GlobalKey<ContactInputTagState> _phoneNumberInputTagGlobalKey = GlobalKey<ContactInputTagState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               ContactInputTag(
+                key: _phoneNumberInputTagGlobalKey,
                 label: 'Your Phone Number',
                 hintText: 'Input phone',
                 updateResult: (items) {},
@@ -62,12 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 24,
               ),
               ContactInputTag(
+                key: _emailInputTagGlobalKey,
                 label: 'Your Email',
                 hintText: 'Input mail',
                 updateResult: (items) {},
                 typeTag: TypeTag.email,
                 // ignore: prefer_const_literals_to_create_immutables
-                listRecord: ['mail1@gmail.com'],
               ),
             ],
           ),
