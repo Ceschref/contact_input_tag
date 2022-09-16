@@ -1,22 +1,10 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## Contact Input Tag
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Package helps you to make email or phone number contact tags like Google Gmail!
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+![ezgif-1-6498164a72](https://user-images.githubusercontent.com/28478203/190557770-ca6003e0-746b-4864-9304-ca2188296154.gif)
 
 ## Getting started
 
@@ -25,12 +13,38 @@ start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+To use package. Add to your dependencies in pubspec.yaml file
 
 ```dart
-const like = 'sample';
+contact_input_tag:
+    git: https://github.com/Ceschref/contact_input_tag
 ```
+Phone Number input tag example
+
+```dart
+ ContactInputTag(
+                label: 'Your Phone Number',
+                hintText: 'Input phone',
+                updateResult: (items) {},
+                typeTag: TypeTag.phoneNumber,
+              ),
+```
+
+Email input tag example
+
+```dart
+ ContactInputTag(
+                label: 'Your Email',
+                hintText: 'Input mail',
+                updateResult: (items) {},
+                typeTag: TypeTag.email,
+                listRecord: ['mail1@gmail.com'],
+              ),
+```
+
+## Properties
+
+
 
 ## Additional information
 
