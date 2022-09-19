@@ -6,7 +6,7 @@ You can custom your model phone number to be compatible with your language, the 
 
 ## Features
 
-![ezgif-1-6498164a72](https://user-images.githubusercontent.com/28478203/190557770-ca6003e0-746b-4864-9304-ca2188296154.gif)
+![ezgif-1-65c6d97b12](https://user-images.githubusercontent.com/28478203/190948481-f043174e-1606-4368-b039-3f4be2e19819.gif)
 
 ## Usage
 
