@@ -79,7 +79,10 @@ class ContactInputTagState extends State<ContactInputTag> {
   String hintText = '';
 
   List<dynamic> get getResult {
-    return listRecord.map((item) => item[widget.typeTag.isTypeTagEmail ? 'email' : 'phoneNumber']).toList();
+    return listRecord
+        .map((item) =>
+            item[widget.typeTag.isTypeTagEmail ? 'email' : 'phoneNumber'])
+        .toList();
   }
 
   String get getText {
@@ -89,7 +92,8 @@ class ContactInputTagState extends State<ContactInputTag> {
   @override
   void initState() {
     super.initState();
-    textEditingController = widget.textEditingController ?? TextEditingController();
+    textEditingController =
+        widget.textEditingController ?? TextEditingController();
     _focusNode = widget.focusNode ?? FocusNode();
     listTextInputFormatter = widget.listTextInputFormatter ??
         (widget.typeTag.isTypeTagEmail
@@ -114,7 +118,9 @@ class ContactInputTagState extends State<ContactInputTag> {
   }
 
   void _updateResult() {
-    widget.updateResult(listRecord.map((e) => e[widget.typeTag.isTypeTagEmail ? 'email' : 'phoneNumber']).toList());
+    widget.updateResult(listRecord
+        .map((e) => e[widget.typeTag.isTypeTagEmail ? 'email' : 'phoneNumber'])
+        .toList());
   }
 
   void _initListRecord() {
@@ -144,12 +150,14 @@ class ContactInputTagState extends State<ContactInputTag> {
   }
 
   void _clearAllText() {
-    textEditingController.text = textEditingController.text.replaceAll('\u200B', '');
+    textEditingController.text =
+        textEditingController.text.replaceAll('\u200B', '');
   }
 
   void _setTextWithBlank() {
     textEditingController
-      ..text = '\u200B\u200B' + textEditingController.text.replaceAll('\u200B', '')
+      ..text =
+          '\u200B\u200B' + textEditingController.text.replaceAll('\u200B', '')
       ..selection = TextSelection.fromPosition(
         TextPosition(
           offset: textEditingController.text.length,
@@ -177,7 +185,8 @@ class ContactInputTagState extends State<ContactInputTag> {
             'color': ExtendedColors.randomColor,
           });
         }
-      } else if (value.checkPhoneNumber(widget.phoneNumberPattern) && !widget.typeTag.isTypeTagEmail) {
+      } else if (value.checkPhoneNumber(widget.phoneNumberPattern) &&
+          !widget.typeTag.isTypeTagEmail) {
         if (!listRecord.any((element) => element['phoneNumber'] == value)) {
           listRecord.add({
             'phoneNumber': value,
@@ -306,7 +315,9 @@ class ContactInputTagState extends State<ContactInputTag> {
             ...listRecord
                 .map(
                   (item) => _buildItemTag(
-                    item[widget.typeTag.isTypeTagEmail ? 'email' : 'phoneNumber'],
+                    item[widget.typeTag.isTypeTagEmail
+                        ? 'email'
+                        : 'phoneNumber'],
                     item['color'],
                     listRecord.indexOf(item),
                   ),
@@ -334,8 +345,10 @@ class ContactInputTagState extends State<ContactInputTag> {
                     color: Color.fromARGB(255, 122, 124, 129),
                   ),
                   border: const OutlineInputBorder(borderSide: BorderSide.none),
-                  focusedBorder: const OutlineInputBorder(borderSide: BorderSide.none),
-                  enabledBorder: const OutlineInputBorder(borderSide: BorderSide.none),
+                  focusedBorder:
+                      const OutlineInputBorder(borderSide: BorderSide.none),
+                  enabledBorder:
+                      const OutlineInputBorder(borderSide: BorderSide.none),
                 ),
                 onChanged: _onChange,
                 onSubmitted: (value) {
