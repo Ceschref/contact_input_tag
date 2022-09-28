@@ -1,6 +1,6 @@
 name: contact_input_tag
-description: A new Flutter package project.
-version: 1.0.0
+description: Package helps you to make email or phone number contact tags like Google Gmail
+version: 1.0.1
 homepage: https://github.com/Ceschref/contact_input_tag
 
 environment:
@@ -21,7 +21,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
+     
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

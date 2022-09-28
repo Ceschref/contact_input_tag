@@ -12,6 +12,7 @@ enum TypeTag {
   phoneNumber,
 }
 
+/// Extension for Type Tag parameter
 extension TypeTagExts on TypeTag {
   bool get isTypeTagEmail {
     return this == TypeTag.email;
@@ -33,10 +34,19 @@ class ContactInputTag extends StatefulWidget {
     this.phoneNumberPattern = r'(09|03|07|08|05)+([0-9]{8})\b',
   }) : super(key: key);
 
+  /// Hint text for TextField
   final String? label;
+
+  /// Hint text for TextField
   final String? hintText;
+
+  /// Optional textEditingController for TextField
   final TextEditingController? textEditingController;
+
+  /// Type of Contact Tag (Email or Phone Number)
   final TypeTag typeTag;
+
+  /// Optional FocusNode for TextField
   final FocusNode? focusNode;
 
   /// One parameter to check is display (*). Field marking is required. Default is false

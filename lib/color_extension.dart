@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+/// Extension for Color in prefix email
 extension ExtendedColors on Color {
   static get randomColor {
     return Color((Random().nextDouble() * 0xDDDDDD).toInt()).withOpacity(1.0);
